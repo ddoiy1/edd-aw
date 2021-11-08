@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -14,6 +15,7 @@ async def on_message(message):
         for i in range(1, len(vote)):
                 choose = await message.channel.send("```" + vote[i] + "```")
                 await choose.add_reaction('👍')
-
-client.run('ODg4NzY4NjgzMTc3MDQ2MDI2.YUXgVg.LpZD1S-00-7DBa7N3llBcwMp4VU')
+                
+access_token = os.environ["BOT_TOKEN"]
+client.run('access_token')
 
